@@ -4,6 +4,7 @@ public class ConditionalStatement {
         if (age > 20) {
             System.out.println("");
         }
+
         boolean isMaleSex = true;
         if (isMaleSex) {
             System.out.println("Это мужчина");
