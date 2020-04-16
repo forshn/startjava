@@ -1,21 +1,23 @@
 public class Calculator {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         int a = 5;
         int b = 3;
-        char sign = '+';
+        char sign = '^';
 
-        if (sign == '+'){
+        if (sign == '+') {
             System.out.println(a + b);
-        } else if (sign == '-'){
+        } else if (sign == '-') {
             System.out.println(a - b);
-        } else if (sign == '*'){
+        } else if (sign == '*') {
             System.out.println(a * b);
-        } else if (sign == '/'){
+        } else if (sign == '/') {
             System.out.println(a / b);
         } else if (sign == '%') {
             System.out.println(a % b);
-        } else if (sign == '^'){
-            System.out.println (a * a);
+        }
+        int exponent = 3;
+        if (sign == '^') {
+            System.out.println (a * exponent);
         }
     }
 }
