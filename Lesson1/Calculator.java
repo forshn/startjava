@@ -15,9 +15,15 @@ public class Calculator {
         } else if (sign == '%') {
             System.out.println(a % b);
         }
-        int exponent = 3;
-        if (sign == '^') {
-            System.out.println (a * exponent);
-        }
+        int exponent = 10;
+        int result = 1;
+        if (sign == '^')
+            for (int i = 0; i < exponent; i++) {
+                result *= a;
+            }
+            System.out.println(result);
     }
 }
+
+
+
