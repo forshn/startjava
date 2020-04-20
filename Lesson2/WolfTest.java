@@ -23,6 +23,5 @@ public class WolfTest {
 
         wolfOne.setColor("Чёрный");
         System.out.println("Цвет волка - " + wolfOne.getColor());
-
     }
 }
