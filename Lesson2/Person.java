@@ -8,16 +8,21 @@ public class Person {
     boolean learnJava() {
 
     }
+
     String speak() {
 
     }
+
     void move() {
 
     }
+
     void run() {
 
     }
+
     void sit() {
 
     }
+
 }

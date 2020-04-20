@@ -1,15 +1,28 @@
 public class WolfTest {
     public static void main(String[] args) {
+
         Wolf wolfOne = new Wolf();
-        System.out.println("Вы создали волка по имени " + wolfOne.name);
-        System.out.println("Его пол - " + wolfOne.sex);
-        System.out.println("Вес волка " + wolfOne.weight + " килограмм");
-        System.out.println("Возраст волка - " + wolfOne.age + " лет");
-        System.out.println("Цвет " + wolfOne.color);
-        wolfOne.move();
+
+        /* wolfOne.move();
         wolfOne.bark();
         wolfOne.hunting();
         wolfOne.run();
-        wolfOne.sit();
+        wolfOne.sit();*/
+
+        wolfOne.setName("Геннадий");
+        System.out.println("Имя волка - " + wolfOne.getName());
+
+        wolfOne.setSex("Бесполый");
+        System.out.println("Пол волка - " + wolfOne.getSex());
+
+        wolfOne.setWeight(19.5F);
+        System.out.println("Вес волка - " + wolfOne.getWeight() + "кг");
+
+        wolfOne.setAge(10);
+        System.out.println("Возарст волка - " + wolfOne.getAge() + "лет");
+
+        wolfOne.setColor("Чёрный");
+        System.out.println("Цвет волка - " + wolfOne.getColor());
+
     }
 }
