@@ -3,11 +3,11 @@ public class Calculator {
     private int firstNumber;
     private int secondNumber;
 
-    public void setFirstNumber(int firstNumber){
+    public void setFirstNumber(int firstNumber) {
         this.firstNumber = firstNumber;
     }
 
-    public void setSecondNumber(int secondNumber){
+    public void setSecondNumber(int secondNumber) {
         this.secondNumber = secondNumber;
     }
 
@@ -16,7 +16,7 @@ public class Calculator {
     }
 
     private int result;
-    public int getResult(){
+    public int getResult() {
         switch (sign) {
         case '+':
         result = firstNumber + secondNumber;
