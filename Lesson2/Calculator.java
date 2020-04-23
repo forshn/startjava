@@ -11,7 +11,7 @@ public class Calculator {
         this.secondNumber = secondNumber;
     }
 
-    public void setSign(char sign){
+    public void setSign(char sign) {
         this.sign = sign;
     }
 
