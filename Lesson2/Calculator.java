@@ -16,32 +16,33 @@ public class Calculator {
     }
 
     private int result;
-    public int getResult() {
+    public int calculate() {
         switch (sign) {
-        case '+':
-        result = firstNumber + secondNumber;
-        break;
-        case '-':
-        result = firstNumber - secondNumber;
-        break;
-        case '*':
-        result = firstNumber * secondNumber;
-        break;
-        case '/':
-        result = firstNumber / secondNumber;
-        break;
-        case '%':
-        result = firstNumber % secondNumber;
-        break;
-        case '^':
-        int a = 1;
-            for (int i = 0; i < secondNumber; i++) {
-                a *= firstNumber;
-            }
-            result = a;
+            case '+':
+                result = firstNumber + secondNumber;
+                break;
+            case '-':
+                result = firstNumber - secondNumber;
+                break;
+            case '*':
+                result = firstNumber * secondNumber;
+                break;
+            case '/':
+                result = firstNumber / secondNumber;
+                break;
+            case '%':
+                result = firstNumber % secondNumber;
+                break;
+            case '^':
+                int a = 1;
+                    for (int i = 0; i < secondNumber; i++) {
+                        a *= firstNumber;
+                    }
+                    result = a;
+                    break;
+            default:
+                System.out.println("Неверно указан тип операции");
             break;
-        default: System.out.println("Неверно указан тип операции");
-        break;
         }
         return result;
    }
