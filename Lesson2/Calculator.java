@@ -52,16 +52,6 @@ public class Calculator {
             System.out.println(calculate());
             break;
         }
-
-        do {
-            System.out.println("Хотите продолжить, yes/no?");
-            String answer = sc.next();
-            if (answer.equals("no")) {
-                break;
-            } else if (answer.equals("yes")) {
-                start();
-            }
-        } while (true);
     }
 }
 
