@@ -7,18 +7,6 @@ public class Calculator {
     private int result;
     Scanner sc = new Scanner(System.in);
 
-    public void setFirstNumber(int firstNumber) {
-        this.firstNumber = firstNumber;
-    }
-
-    public void setSecondNumber(int secondNumber) {
-        this.secondNumber = secondNumber;
-    }
-
-    public void setSign(char sign) {
-        this.sign = sign;
-    }
-
     public int calculate() {
         switch (sign) {
             case '+':

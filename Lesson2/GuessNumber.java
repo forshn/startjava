@@ -11,7 +11,6 @@ public class GuessNumber {
         System.out.println("Введите имя второго игрока");
         Player player2 = new Player(sc.next());
 
-
         while (true) {
 
             System.out.println(player1.getName() + ", введите ваше число от 0 до 100:");
