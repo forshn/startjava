@@ -3,36 +3,36 @@ public class Calculator {
     private int firstNumber;
     private int secondNumber;
 
-    public void setFirstNumber(int firstNumber){
+    public void setFirstNumber(int firstNumber) {
         this.firstNumber = firstNumber;
     }
 
-    public void setSecondNumber(int secondNumber){
+    public void setSecondNumber(int secondNumber) {
         this.secondNumber = secondNumber;
     }
 
-    public void setSign(char sign){
+    public void setSign(char sign) {
         this.sign = sign;
     }
 
     private int result;
-    public int getResult(){
-        switch (sign) {
+    public int calculate() {
+        switch(sign) {
         case '+':
-        result = firstNumber + secondNumber;
-        break;
+            result = firstNumber + secondNumber;
+            break;
         case '-':
-        result = firstNumber - secondNumber;
-        break;
+            result = firstNumber - secondNumber;
+            break;
         case '*':
-        result = firstNumber * secondNumber;
-        break;
+            result = firstNumber * secondNumber;
+            break;
         case '/':
-        result = firstNumber / secondNumber;
-        break;
+            result = firstNumber / secondNumber;
+            break;
         case '%':
-        result = firstNumber % secondNumber;
-        break;
+            result = firstNumber % secondNumber;
+            break;
         case '^':
         int a = 1;
             for (int i = 0; i < secondNumber; i++) {
@@ -41,7 +41,7 @@ public class Calculator {
             result = a;
             break;
         default: System.out.println("Неверно указан тип операции");
-        break;
+            break;
         }
         return result;
    }
