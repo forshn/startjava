@@ -1,59 +1,48 @@
-import java.util.*;
-
 public class Calculator {
     private char sign = '*';
     private int firstNumber;
     private int secondNumber;
-    private int result;
-    Scanner sc = new Scanner(System.in);
 
-    public int calculate() {
+    public void setFirstNumber(int firstNumber){
+        this.firstNumber = firstNumber;
+    }
+
+    public void setSecondNumber(int secondNumber){
+        this.secondNumber = secondNumber;
+    }
+
+    public void setSign(char sign){
+        this.sign = sign;
+    }
+
+    private int result;
+    public int getResult(){
         switch (sign) {
-            case '+':
-                result = firstNumber + secondNumber;
-                break;
-            case '-':
-                result = firstNumber - secondNumber;
-                break;
-            case '*':
-                result = firstNumber * secondNumber;
-                break;
-            case '/':
-                result = firstNumber / secondNumber;
-                break;
-            case '%':
-                result = firstNumber % secondNumber;
-                break;
-            case '^':
-                int a = 1;
-                for (int i = 0; i < secondNumber; i++) {
-                    a *= firstNumber;
-                }
-                result = a;
-                break;
-            default:
-                System.out.println("Неверно указан тип операции");
-                break;
+        case '+':
+        result = firstNumber + secondNumber;
+        break;
+        case '-':
+        result = firstNumber - secondNumber;
+        break;
+        case '*':
+        result = firstNumber * secondNumber;
+        break;
+        case '/':
+        result = firstNumber / secondNumber;
+        break;
+        case '%':
+        result = firstNumber % secondNumber;
+        break;
+        case '^':
+        int a = 1;
+            for (int i = 0; i < secondNumber; i++) {
+                a *= firstNumber;
+            }
+            result = a;
+            break;
+        default: System.out.println("Неверно указан тип операции");
+        break;
         }
         return result;
-    }
-
-    public void start() {
-        while (true) {
-            System.out.println("Введите первое число");
-            firstNumber = sc.nextInt();
-
-            System.out.println("Введите знак математической операции");
-            sign = sc.next().charAt(0);
-
-            System.out.println("Введите второе число");
-            secondNumber = sc.nextInt();
-
-            System.out.println(calculate());
-            break;
-        }
-    }
+   }
 }
-
-
-
