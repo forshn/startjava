@@ -4,7 +4,7 @@ public class CalculatorTest {
     public static void main(String[] args) {
         Calculator calc = new Calculator();
         Scanner sc = new Scanner(System.in);
-        boolean ifNo = true;
+
         do {
             System.out.println("Введите первое число");
             calc.setFirstNumber(sc.nextInt());
@@ -17,20 +17,15 @@ public class CalculatorTest {
 
             System.out.println(calc.calculate());
 
-            boolean isAnswer = true;
+            String answer;
             do {
                 System.out.println("Хотите продолжить, yes/no?");
-                String answer = sc.next();
-
-                if (answer.equals("yes")) {
-                    isAnswer = false;
-                } else if (answer.equals("no")) {
-                    isAnswer = false;
-                    ifNo = false;
-                } else {
-                }
-            } while (isAnswer == true);
-        } while (ifNo == true);
+                answer = sc.next();
+            } while (!answer.equals("yes") && !answer.equals("no"));
+            if (answer.equals("no")) {
+                break;
+            }
+        } while (true);
     }
 }
 
