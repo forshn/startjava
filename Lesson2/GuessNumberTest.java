@@ -2,25 +2,26 @@ import java.util.*;
 
 public class GuessNumberTest {
     static Scanner scan = new Scanner(System.in);
-    static GuessNumber game = new GuessNumber();
 
     public static void main(String[] args) {
-        boolean ifNo = true;
+        System.out.println("Введите имя первого игрока");
+        Player player1 = new Player(scan.next());
+
+        System.out.println("Введите имя второго игрока");
+        Player player2 = new Player(scan.next());
+
+        GuessNumber game = new GuessNumber(player1, player2);
+
         do {
             game.startGame();
-            boolean isAnswer = true;
+            String answer;
             do {
                 System.out.println("Хотите продолжить, yes/no?");
-                String answer = scan.next();
-
-                if (answer.equals("yes")) {
-                    isAnswer = false;
-                } else if (answer.equals("no")) {
-                    isAnswer = false;
-                    ifNo = false;
-                } else {
-                }
-            } while (isAnswer == true);
-        } while (ifNo == true);
+                answer = scan.next();
+            } while (!answer.equals("yes") && !answer.equals("no"));
+            if (answer.equals("no")) {
+                break;
+            }
+        } while (true);
     }
 }

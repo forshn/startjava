@@ -3,15 +3,17 @@ import java.util.*;
 public class GuessNumber {
     private int compNum = (int) (Math.random() * 101);
     private Scanner sc = new Scanner(System.in);
+    private Player player1;
+    private Player player2;
+
+    public GuessNumber(Player player1, Player player2){
+        this.player1 = player1;
+        this.player2 = player2;
+    }
 
     public void startGame() {
-        System.out.println("Введите имя первого игрока");
-        Player player1 = new Player(sc.next());
 
-        System.out.println("Введите имя второго игрока");
-        Player player2 = new Player(sc.next());
-
-        while (true) {
+                while (true) {
             System.out.println(player1.getName() + ", введите ваше число от 0 до 100:");
             player1.setNumber(sc.nextInt());
             int player1Num = player1.getNumber();
@@ -34,7 +36,7 @@ public class GuessNumber {
             } else if (player2Num > compNum) {
                 System.out.println("Введенное вами число больше того, что загадал компьютер");
             } else if (player2Num == compNum) {
-                System.out.println(player1.getName() + ", Вы угадали!");
+                System.out.println(player2.getName() + ", Вы угадали!");
                 break;
             }
         }
