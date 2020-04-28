@@ -1,9 +1,8 @@
 import java.util.*;
 
 public class GuessNumberTest {
-    static Scanner scan = new Scanner(System.in);
-
     public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
         System.out.println("Введите имя первого игрока");
         Player player1 = new Player(scan.next());
 
@@ -11,17 +10,13 @@ public class GuessNumberTest {
         Player player2 = new Player(scan.next());
 
         GuessNumber game = new GuessNumber(player1, player2);
-
+        String answer;
         do {
             game.startGame();
-            String answer;
             do {
                 System.out.println("Хотите продолжить, yes/no?");
                 answer = scan.next();
             } while (!answer.equals("yes") && !answer.equals("no"));
-            if (answer.equals("no")) {
-                break;
-            }
-        } while (true);
+        } while (answer.equals("yes"));
     }
 }

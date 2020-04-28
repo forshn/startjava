@@ -12,8 +12,7 @@ public class GuessNumber {
     }
 
     public void startGame() {
-
-                while (true) {
+        while (true) {
             System.out.println(player1.getName() + ", введите ваше число от 0 до 100:");
             player1.setNumber(sc.nextInt());
             int player1Num = player1.getNumber();

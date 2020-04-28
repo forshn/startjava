@@ -19,13 +19,12 @@ public class CalculatorTest {
 
             String answer;
             do {
-                System.out.println("Хотите продолжить, yes/no?");
-                answer = sc.next();
-            } while (!answer.equals("yes") && !answer.equals("no"));
-            if (answer.equals("no")) {
-                break;
-            }
-        } while (true);
+                game.startGame();
+                do {
+                    System.out.println("Хотите продолжить, yes/no?");
+                    answer = scan.next();
+                } while (!answer.equals("yes") && !answer.equals("no"));
+        } while (answer.equals("yes"));
     }
 }
 

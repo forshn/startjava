@@ -43,6 +43,6 @@ public class Calculator {
             default: System.out.println("Неверно указан тип операции");
                 break;
             }
-            return result;
+                return result;
    }
 }
