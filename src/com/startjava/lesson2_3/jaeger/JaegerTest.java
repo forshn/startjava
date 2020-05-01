@@ -1,3 +1,5 @@
+
+package com.startjava.lesson2_3.jaeger;
 public class JaegerTest {
     public static void main(String[] args) {
         Jaeger crimson = new Jaeger("Cherno Alfa", "Mark-1", "Russia", 85.34F, 2.34F, 3, 10, 10);

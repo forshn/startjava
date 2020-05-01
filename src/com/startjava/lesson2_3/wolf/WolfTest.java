@@ -1,6 +1,7 @@
+package com.startjava.lesson2_3.wolf;
+
 public class WolfTest {
     public static void main(String[] args) {
-
         Wolf wolfOne = new Wolf();
 
         /* wolfOne.move();
@@ -10,7 +11,7 @@ public class WolfTest {
         wolfOne.sit();*/
 
         wolfOne.setName("Геннадий");
-        System.out.println("Имя волка - " + wolfOne.getName());
+        System.out.println(wolfOne.getName());
 
         wolfOne.setSex("Бесполый");
         System.out.println("Пол волка - " + wolfOne.getSex());

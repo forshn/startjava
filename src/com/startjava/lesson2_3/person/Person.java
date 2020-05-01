@@ -1,3 +1,5 @@
+package com.startjava.lesson2_3.person;
+
 public class Person {
     String sex = "мужской";
     String name = "Вася";
@@ -6,11 +8,11 @@ public class Person {
     int age = 30;
 
     boolean learnJava() {
-
+      return true;
     }
 
     String speak() {
-
+      return null;
     }
 
     void move() {

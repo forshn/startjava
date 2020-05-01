@@ -1,3 +1,5 @@
+package com.startjava.lesson2_3.calculator;
+
 import java.util.*;
 
 public class CalculatorTest {
@@ -5,7 +7,6 @@ public class CalculatorTest {
         Calculator calc = new Calculator();
         Scanner sc = new Scanner(System.in);
 
-        do {
             System.out.println("Введите первое число");
             calc.setFirstNumber(sc.nextInt());
 
@@ -19,13 +20,12 @@ public class CalculatorTest {
 
             String answer;
             do {
-                game.startGame();
-                do {
-                    System.out.println("Хотите продолжить, yes/no?");
-                    answer = scan.next();
-                } while (!answer.equals("yes") && !answer.equals("no"));
+            calc.calculate();
+            do {
+                System.out.println("Хотите продолжить, yes/no?");
+                answer = sc.next();
+            } while (!answer.equals("yes") && !answer.equals("no"));
         } while (answer.equals("yes"));
     }
 }
-
 

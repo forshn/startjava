@@ -1,3 +1,5 @@
+package com.startjava.Lesson1.variable;
+
 public class Variable {
     public static void main(String[] args) {
         byte ram = 16;

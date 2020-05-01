@@ -1,3 +1,6 @@
+package com.startjava.lesson2_3.wolf;
+
+
 public class Wolf {
     private String sex = "мужской";
     private String name = "Олег Владимирович";
@@ -32,8 +35,9 @@ public class Wolf {
     public void setAge(int age) {
         if (age <= 8 && age > 0) {
             this.age = age;
-        } else
+        } else {
         System.out.println("Некорректный возраст");
+          }
     }
 
     public int getAge() {
