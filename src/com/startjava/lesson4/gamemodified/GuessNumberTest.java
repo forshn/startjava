@@ -1,4 +1,4 @@
-package com.startjava.lesson4.gamemofified;
+package com.startjava.lesson4.gamemodified;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package com.startjava.lesson4.gamemofified;
+package com.startjava.lesson4.gamemodified;
 
 import java.util.Scanner;
 
@@ -15,11 +15,9 @@ public class GuessNumber {
 
     public void startGame() {
         while (true) {
-            if (Player.i < 10) {
+            if (Player.player1Counter < 10) {
                 System.out.println(player1.getName() + ", введите ваше число от 0 до 100:");
-
-                player1.setNumber(sc.nextInt());
-
+                player1.setNumber1(sc.nextInt());
                 int player1Num = player1.getNumber();
 
                 if (player1Num < compNum) {
@@ -28,8 +26,7 @@ public class GuessNumber {
                     System.out.println("Введенное вами число больше того, что загадал компьютер");
                 } else {
                     System.out.println(player1.getName() + ", Вы угадали!");
-
-                    System.out.println("Игрок " + player1.getName() + " угадал число " + compNum + " с " + Player.i + " Попытки");
+                    System.out.println("Игрок " + player1.getName() + " угадал число " + compNum + " с " + Player.player1Counter + " Попытки");
                     break;
                 }
             } else {
@@ -37,10 +34,9 @@ public class GuessNumber {
                 break;
             }
 
-
-            if (Player.j < 10) {
+            if (Player.player2Counter < 10) {
                 System.out.println(player2.getName() + ", введите ваше число от 0 до 100:");
-                player2.setNumber1(sc.nextInt());
+                player2.setNumber2(sc.nextInt());
                 int player2Num = player2.getNumber();
 
                 if (player2Num < compNum) {
@@ -49,16 +45,15 @@ public class GuessNumber {
                     System.out.println("Введенное вами число больше того, что загадал компьютер");
                 } else {
                     System.out.println(player2.getName() + ", Вы угадали!");
-                    System.out.println("Игрок " + player2.getName() + " угадал число " + compNum + " с " + Player.j + " Попытки");
+                    System.out.println("Игрок " + player2.getName() + " угадал число " + compNum + " с " + Player.player2Counter + " Попытки");
                     break;
                 }
             } else {
                 System.out.println("У " + player2.getName() + " закончились попытки");
                 break;
             }
-
         }
-        player1.showResult();
+        player1.showResult1();
         player2.showResult2();
     }
 }
