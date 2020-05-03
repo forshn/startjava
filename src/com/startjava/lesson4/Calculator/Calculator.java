@@ -1,4 +1,4 @@
-package com.startjava.lesson2_3.calculator;
+package com.startjava.lesson4.Calculator;
 
 public class Calculator {
     private char sign = '*';
@@ -37,11 +37,7 @@ public class Calculator {
                 result = firstNumber % secondNumber;
                 break;
             case '^':
-                int a = 1;
-                for (int i = 0; i < secondNumber; i++) {
-                    a *= firstNumber;
-                }
-                result = a;
+                result = (int) Math.pow(firstNumber, secondNumber);
                 break;
             default:
                 System.out.println("Неверно указан тип операции");
