@@ -15,7 +15,8 @@ public class GuessNumberTest {
         GuessNumber game = new GuessNumber(player1, player2);
         String answer;
         do {
-
+            player1.toZero();
+            player2.toZero();
             System.out.println("У вас 10 попыток");
             game.startGame();
             do {

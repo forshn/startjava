@@ -38,9 +38,9 @@ public class GuessNumber {
             }
 
 
-           /* if (Player.i < 10) {
+            if (Player.j < 10) {
                 System.out.println(player2.getName() + ", введите ваше число от 0 до 100:");
-                player2.setNumber(sc.nextInt());
+                player2.setNumber1(sc.nextInt());
                 int player2Num = player2.getNumber();
 
                 if (player2Num < compNum) {
@@ -49,16 +49,16 @@ public class GuessNumber {
                     System.out.println("Введенное вами число больше того, что загадал компьютер");
                 } else {
                     System.out.println(player2.getName() + ", Вы угадали!");
-                    System.out.println("Игрок " + player2.getName() + " угадал число " + compNum + " с " + Player.i + " Попытки");
+                    System.out.println("Игрок " + player2.getName() + " угадал число " + compNum + " с " + Player.j + " Попытки");
                     break;
                 }
             } else {
                 System.out.println("У " + player2.getName() + " закончились попытки");
                 break;
-            }*/
+            }
 
         }
         player1.showResult();
-        player2.showResult();
+        player2.showResult2();
     }
 }
