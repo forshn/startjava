@@ -20,7 +20,7 @@ public class GuessNumber {
     public void startGame() {
         int compNum = rnd(max);
         while (true) {
-            if (Player.player1Counter < 10) {
+            if (player1.player1Counter < 10) {
                 System.out.println(player1.getName() + ", введите ваше число от 0 до 100:");
                 player1.setNumber1(sc.nextInt());
                 int player1Num = player1.getNumber();
@@ -31,7 +31,7 @@ public class GuessNumber {
                     System.out.println("Введенное вами число больше того, что загадал компьютер");
                 } else {
                     System.out.println(player1.getName() + ", Вы угадали!");
-                    System.out.println("Игрок " + player1.getName() + " угадал число " + compNum + " с " + Player.player1Counter + " Попытки");
+                    System.out.println("Игрок " + player1.getName() + " угадал число " + compNum + " с " + player1.player1Counter + " Попытки");
                     break;
                 }
             } else {
@@ -39,7 +39,7 @@ public class GuessNumber {
                 break;
             }
 
-            if (Player.player2Counter < 10) {
+            if (player1.player2Counter < 10) {
                 System.out.println(player2.getName() + ", введите ваше число от 0 до 100:");
                 player2.setNumber2(sc.nextInt());
                 int player2Num = player2.getNumber();
@@ -50,7 +50,7 @@ public class GuessNumber {
                     System.out.println("Введенное вами число больше того, что загадал компьютер");
                 } else {
                     System.out.println(player2.getName() + ", Вы угадали!");
-                    System.out.println("Игрок " + player2.getName() + " угадал число " + compNum + " с " + Player.player2Counter + " Попытки");
+                    System.out.println("Игрок " + player2.getName() + " угадал число " + compNum + " с " + player2.player2Counter + " Попытки");
                     break;
                 }
             } else {
@@ -60,7 +60,7 @@ public class GuessNumber {
         }
         player1.showResult1();
         player2.showResult2();
-        Player.player1Counter = 0;
-        Player.player2Counter = 0;
+        player1.player1Counter = 0;
+        player2.player2Counter = 0;
     }
 }

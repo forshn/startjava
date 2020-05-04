@@ -17,7 +17,7 @@ public class Player {
         return name;
     }
 
-    public static int player1Counter = 0;
+    public int player1Counter = 0;
 
     public void setNumber1(int number) {
         this.number = number;
@@ -25,7 +25,7 @@ public class Player {
         player1Counter++;
     }
 
-    public static int player2Counter = 0;
+    public int player2Counter = 0;
 
     public void setNumber2(int number) {
         this.number = number;
