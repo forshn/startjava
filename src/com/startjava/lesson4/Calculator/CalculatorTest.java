@@ -6,7 +6,9 @@ public class CalculatorTest {
     public static void main(String[] args) {
         Calculator calc = new Calculator();
         Scanner sc = new Scanner(System.in);
+        String answer;
 
+        do {
             System.out.println("Введите первое число");
             calc.setFirstNumber(sc.nextInt());
 
@@ -17,9 +19,6 @@ public class CalculatorTest {
             calc.setSecondNumber(sc.nextInt());
 
             System.out.println(calc.calculate());
-
-            String answer;
-            do {
             calc.calculate();
             do {
                 System.out.println("Хотите продолжить, yes/no?");
