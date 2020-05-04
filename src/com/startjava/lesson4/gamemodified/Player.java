@@ -47,6 +47,6 @@ public class Player {
 
     public void toZero() {
         Arrays.fill(numbersPlayer1, 0, player1Counter, 0);
-        Arrays.fill(numbersPlayer2, 0, player2Counter,0);
+        Arrays.fill(numbersPlayer2, 0, player2Counter, 0);
     }
 }

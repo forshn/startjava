@@ -3,7 +3,7 @@ package com.startjava.lesson4.gamemodified;
 import java.util.Scanner;
 
 public class GuessNumber {
-    private int compNum = (int) (Math.random() * 101);
+    private int max = 100;
     private Scanner sc = new Scanner(System.in);
     private Player player1;
     private Player player2;
@@ -13,7 +13,12 @@ public class GuessNumber {
         this.player2 = player2;
     }
 
+    public static int rnd(int max) {
+        return (int) (Math.random() * ++max);
+    }
+
     public void startGame() {
+        int compNum = rnd(max);
         while (true) {
             if (Player.player1Counter < 10) {
                 System.out.println(player1.getName() + ", введите ваше число от 0 до 100:");
@@ -55,5 +60,7 @@ public class GuessNumber {
         }
         player1.showResult1();
         player2.showResult2();
+        Player.player1Counter = 0;
+        Player.player2Counter = 0;
     }
 }
