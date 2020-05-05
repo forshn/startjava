@@ -7,7 +7,7 @@ public class GuessNumber {
     private Scanner sc = new Scanner(System.in);
     private Player player1;
     private Player player2;
-    private boolean isTrue;
+    private boolean isTrue = true;
 
 
     public GuessNumber(Player player1, Player player2) {
@@ -58,7 +58,7 @@ public class GuessNumber {
             return "Введенное вами число больше того, что загадал компьютер";
         } else {
             isTrue = false;
-            return name + ", Вы угадали!" + "\n" + "Игрок " + name + " угадал число " + compNumber + " с " + counter + " Попытки";
+            return name.toUpperCase() + ", Вы угадали!" + "\n" + "Игрок " + name.toUpperCase() + " угадал число " + compNumber + " с " + counter + " Попытки";
         }
     }
 }
