@@ -1,41 +1,36 @@
 package com.startjava.lesson4.Calculator;
 
 public class Calculator {
-    private char sign = '*';
-    private int firstNumber;
-    private int secondNumber;
-    private String mathExpr;
+    private String[] mathEx = new String[3];
 
-    public void setFirstNumber(int firstNumber) {
-        this.firstNumber = firstNumber;
+    public void setMathExpression(String mathEx) {
+        this.mathEx = mathEx.split(" ", 3);
     }
 
-
-
-    public void setMathExpression (String mathExpr){
-        this.mathExpr = mathExpr;
-        System.out.println(mathExpr);
-    }
-    private int result;
+    int result;
 
     public int calculate() {
+        String sign = mathEx[1];
+        int firstNumber = Integer.parseInt(mathEx[0]);
+        int secondNumber = Integer.parseInt(mathEx[2]);
+
         switch (sign) {
-            case '+':
+            case "+":
                 result = firstNumber + secondNumber;
                 break;
-            case '-':
+            case "-":
                 result = firstNumber - secondNumber;
                 break;
-            case '*':
+            case "*":
                 result = firstNumber * secondNumber;
                 break;
-            case '/':
+            case "/":
                 result = firstNumber / secondNumber;
                 break;
-            case '%':
+            case "%":
                 result = firstNumber % secondNumber;
                 break;
-            case '^':
+            case "^":
                 result = (int) Math.pow(firstNumber, secondNumber);
                 break;
             default:
