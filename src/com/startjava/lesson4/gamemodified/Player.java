@@ -36,7 +36,7 @@ public class Player {
     }
 
     public void showResult() {
-        System.out.println(Arrays.toString(Arrays.copyOf(numbersPlayer, playerCounter)));
+        System.out.println("Числа, которые вводил " + name + " :" + "\n" + Arrays.toString(Arrays.copyOf(numbersPlayer, playerCounter)));
     }
 
     public void toZero() {
