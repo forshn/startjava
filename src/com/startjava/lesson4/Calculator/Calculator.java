@@ -10,8 +10,8 @@ public class Calculator {
     int result;
 
     public int calculate() {
-        String sign = mathEx[1];
         int firstNumber = Integer.parseInt(mathEx[0]);
+        String sign = mathEx[1];
         int secondNumber = Integer.parseInt(mathEx[2]);
 
         switch (sign) {
