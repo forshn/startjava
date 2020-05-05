@@ -4,19 +4,18 @@ public class Calculator {
     private char sign = '*';
     private int firstNumber;
     private int secondNumber;
+    private String mathExpr;
 
     public void setFirstNumber(int firstNumber) {
         this.firstNumber = firstNumber;
     }
 
-    public void setSecondNumber(int secondNumber) {
-        this.secondNumber = secondNumber;
-    }
 
-    public void setSign(char sign) {
-        this.sign = sign;
-    }
 
+    public void setMathExpression (String mathExpr){
+        this.mathExpr = mathExpr;
+        System.out.println(mathExpr);
+    }
     private int result;
 
     public int calculate() {

@@ -19,10 +19,11 @@ public class GuessNumber {
 
     public void startGame() {
         int compNum = rnd(max);
+        System.out.println("У вас 10 попыток");
         while (true) {
-            if (player1.player1Counter < 10) {
+            if (player1.getCounterNumber() < 10) {
                 System.out.println(player1.getName() + ", введите ваше число от 0 до 100:");
-                player1.setNumber1(sc.nextInt());
+                player1.setNumber(sc.nextInt());
                 int player1Num = player1.getNumber();
 
                 if (player1Num < compNum) {
@@ -31,7 +32,7 @@ public class GuessNumber {
                     System.out.println("Введенное вами число больше того, что загадал компьютер");
                 } else {
                     System.out.println(player1.getName() + ", Вы угадали!");
-                    System.out.println("Игрок " + player1.getName() + " угадал число " + compNum + " с " + player1.player1Counter + " Попытки");
+                    System.out.println("Игрок " + player1.getName() + " угадал число " + compNum + " с " + player1.getCounterNumber()+ " Попытки");
                     break;
                 }
             } else {
@@ -39,9 +40,9 @@ public class GuessNumber {
                 break;
             }
 
-            if (player1.player2Counter < 10) {
+            if (player2.getCounterNumber() < 10) {
                 System.out.println(player2.getName() + ", введите ваше число от 0 до 100:");
-                player2.setNumber2(sc.nextInt());
+                player2.setNumber(sc.nextInt());
                 int player2Num = player2.getNumber();
 
                 if (player2Num < compNum) {
@@ -50,7 +51,7 @@ public class GuessNumber {
                     System.out.println("Введенное вами число больше того, что загадал компьютер");
                 } else {
                     System.out.println(player2.getName() + ", Вы угадали!");
-                    System.out.println("Игрок " + player2.getName() + " угадал число " + compNum + " с " + player2.player2Counter + " Попытки");
+                    System.out.println("Игрок " + player2.getName() + " угадал число " + compNum + " с " + player2.getCounterNumber() + " Попытки");
                     break;
                 }
             } else {
@@ -58,9 +59,11 @@ public class GuessNumber {
                 break;
             }
         }
-        player1.showResult1();
-        player2.showResult2();
-        player1.player1Counter = 0;
-        player2.player2Counter = 0;
+        player1.showResult();
+        player2.showResult();
+        player1.setCounter(0);
+        player2.setCounter(0);
+        player1.toZero();
+        player2.toZero();
     }
 }
