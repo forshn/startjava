@@ -23,7 +23,7 @@ public class GuessNumber {
         while (isAnswerYes) {
             if (player1.getCounterNumber() < 10 && isAnswerYes) {
                 player1.setNumber(enterNumber(player1.getName()));
-                System.out.println(compareNumbers(player1, compNum));
+                compareNumbers(player1, compNum);
             } else {
                 System.out.println("У " + player1.getName() + " закончились попытки");
                 break;
@@ -31,7 +31,7 @@ public class GuessNumber {
 
             if (player2.getCounterNumber() < 10 && isAnswerYes) {
                 player2.setNumber(enterNumber(player2.getName()));
-                System.out.println(compareNumbers(player2, compNum));
+                compareNumbers(player2, compNum);
             } else {
                 System.out.println("У " + player2.getName() + " закончились попытки");
                 break;
