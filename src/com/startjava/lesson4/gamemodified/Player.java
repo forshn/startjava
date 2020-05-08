@@ -5,9 +5,6 @@ import java.util.Arrays;
 public class Player {
 
     private String name;
-/*
-    private int number;
-*/
     private int[] enteredNumbers = new int[10];
     private int attempt = 0;
 

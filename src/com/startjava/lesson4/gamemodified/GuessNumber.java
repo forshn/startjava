@@ -5,11 +5,11 @@ import java.util.Scanner;
 
 public class GuessNumber {
     private int maxSizeOfNumber = 100;
-    int compNum = setCompNumber();
+    int compNum;
     private Scanner sc = new Scanner(System.in);
     private Player player1;
     private Player player2;
-    private boolean isTrue = true;
+    private boolean isAnswerYes = true;
 
     public GuessNumber(Player player1, Player player2) {
         this.player1 = player1;
@@ -18,30 +18,24 @@ public class GuessNumber {
 
     public void startGame() {
         System.out.println("У вас 10 попыток");
+        compNum = setCompNumber();
 
-
-        // Если вынести метод рандомНомер из старгейм, число не меняется после продолжения игры
-
-        while (isTrue) {
-
-            if (player1.getCounterNumber() < 10 && isTrue) {
+        while (isAnswerYes) {
+            if (player1.getCounterNumber() < 10 && isAnswerYes) {
                 player1.setNumber(enterNumber(player1.getName()));
-                System.out.println(compareNumbers(player1.getNumber(), compNum, player1.getName(), player1.getCounterNumber()));
-                System.out.println(compNum);
-                System.out.println(player1.getNumber());
-                showResult(player1.getName(), player1.getEnteredNumbers(), player1.getCounterNumber());
+                System.out.println(compareNumbers(player1, compNum));
             } else {
                 System.out.println("У " + player1.getName() + " закончились попытки");
                 break;
             }
 
-           /* if (player2.getCounterNumber() < 10 && isTrue) {
+            if (player2.getCounterNumber() < 10 && isAnswerYes) {
                 player2.setNumber(enterNumber(player2.getName()));
-                System.out.println(compareNumbers(player2.getNumber(), compNum, player2.getName(), player2.getCounterNumber()));
+                System.out.println(compareNumbers(player2, compNum));
             } else {
                 System.out.println("У " + player2.getName() + " закончились попытки");
                 break;
-            }*/
+            }
         }
         showResult(player1.getName(), player1.getEnteredNumbers(), player1.getCounterNumber());
         showResult(player2.getName(), player2.getEnteredNumbers(), player2.getCounterNumber());
@@ -49,7 +43,7 @@ public class GuessNumber {
         player2.setCounter(0);
         player1.clearEnteredNumbers();
         player2.clearEnteredNumbers();
-        isTrue = true;
+        isAnswerYes = true;
     }
 
     private int setCompNumber() {
@@ -61,14 +55,16 @@ public class GuessNumber {
         return sc.nextInt();
     }
 
-    private String compareNumbers(int playerNumber, int compNumber, String name, int counter) {
-        if (playerNumber < compNumber) {
-            return "Введенное вами число меньше того, что загадал комьютер";
-        } else if (playerNumber > compNumber) {
-            return "Введенное вами число больше того, что загадал компьютер";
+    private boolean compareNumbers(Player player, int compNumber) {
+        if (player.getNumber() < compNumber) {
+            System.out.println("Введенное вами число меньше того, что загадал комьютер");
+            return true;
+        } else if (player.getNumber() > compNumber) {
+            System.out.println("Введенное вами число больше того, что загадал компьютер");
+            return true;
         } else {
-            isTrue = false;
-            return name.toUpperCase() + ", Вы угадали!" + "\n" + "Игрок " + name.toUpperCase() + " угадал число " + compNumber + " с " + counter + " Попытки";
+            System.out.println(player.getName().toUpperCase() + ", Вы угадали!" + "\n" + "Игрок " + player.getName().toUpperCase() + " угадал число " + compNumber + " с " + player.getCounterNumber() + " Попытки");
+            return isAnswerYes = false;
         }
     }
 
