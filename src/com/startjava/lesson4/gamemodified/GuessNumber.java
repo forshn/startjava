@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class GuessNumber {
     private int maxSizeOfNumber = 100;
-    int compNum;
+    private int compNum;
     private Scanner sc = new Scanner(System.in);
     private Player player1;
     private Player player2;
