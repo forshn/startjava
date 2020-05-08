@@ -1,5 +1,6 @@
 package com.startjava.lesson4.gamemodified;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class GuessNumber {
@@ -9,21 +10,19 @@ public class GuessNumber {
     private Player player2;
     private boolean isTrue = true;
 
-
     public GuessNumber(Player player1, Player player2) {
         this.player1 = player1;
         this.player2 = player2;
     }
-
 
     public void startGame() {
         int compNum = randomizeCompNumber(maxSizeOfNumber);
         System.out.println("У вас 10 попыток");
 
         while (isTrue) {
+            System.out.println(compNum);
             if (player1.getCounterNumber() < 10 && isTrue) {
-                System.out.println(player1.getName() + ", введите ваше число от 0 до 100:");
-                enterNumber(sc.nextInt());
+                player1.setNumber(enterNumber(player1.getName()));
                 System.out.println(compareNumbers(player1.getNumber(), compNum, player1.getName(), player1.getCounterNumber()));
             } else {
                 System.out.println("У " + player1.getName() + " закончились попытки");
@@ -31,28 +30,33 @@ public class GuessNumber {
             }
 
             if (player2.getCounterNumber() < 10 && isTrue) {
-                System.out.println(player2.getName() + ", введите ваше число от 0 до 100:");
-                player2.setNumber(sc.nextInt());
+                player2.setNumber(enterNumber(player2.getName()));
                 System.out.println(compareNumbers(player2.getNumber(), compNum, player2.getName(), player2.getCounterNumber()));
             } else {
                 System.out.println("У " + player2.getName() + " закончились попытки");
                 break;
             }
         }
-        player1.showResult();
-        player2.showResult();
+        showResult(player1.getName(), player1.getEnteredNumbers(), player1.getCounterNumber());
+        showResult(player2.getName(), player2.getEnteredNumbers(), player2.getCounterNumber());
         player1.setCounter(0);
         player2.setCounter(0);
         player1.clearArray();
         player2.clearArray();
         isTrue = true;
     }
+
     private int randomizeCompNumber(int max) {
         return (int) (Math.random() * max + 1);
     }
 
-    private int enterNumber(int number){
-         return number;
+    private int enterNumber(String name) {
+        System.out.println(name + ", введите ваше число от 0 до 100:");
+        return sc.nextInt();
+    }
+
+    private void showResult(String name, int[] enteredNumbers, int counterNumber) {
+        System.out.println("Числа, которые вводил " + name + " :" + "\n" + Arrays.toString(Arrays.copyOf(enteredNumbers, counterNumber)));
     }
 
     private String compareNumbers(int playerNumber, int compNumber, String name, int counter) {

@@ -17,14 +17,6 @@ public class Player {
         return name;
     }
 
-    public void setCounter(int counter) {
-        this.attempt = counter;
-    }
-
-    public int getCounterNumber() {
-        return attempt;
-    }
-
     public void setNumber(int number) {
         this.number = number;
         enteredNumbers[attempt] = number;
@@ -35,8 +27,16 @@ public class Player {
         return number;
     }
 
-    public void showResult() {
-        System.out.println("Числа, которые вводил " + name + " :" + "\n" + Arrays.toString(Arrays.copyOf(enteredNumbers, attempt)));
+    public int[] getEnteredNumbers() {
+        return enteredNumbers;
+    }
+
+    public void setCounter(int counter) {
+        this.attempt = counter;
+    }
+
+    public int getCounterNumber() {
+        return attempt;
     }
 
     public void clearArray() {
