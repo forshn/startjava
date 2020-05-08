@@ -35,13 +35,13 @@ public class GuessNumber {
                 break;
             }
 
-            if (player2.getCounterNumber() < 10 && isTrue) {
+           /* if (player2.getCounterNumber() < 10 && isTrue) {
                 player2.setNumber(enterNumber(player2.getName()));
                 System.out.println(compareNumbers(player2.getNumber(), compNum, player2.getName(), player2.getCounterNumber()));
             } else {
                 System.out.println("У " + player2.getName() + " закончились попытки");
                 break;
-            }
+            }*/
         }
         showResult(player1.getName(), player1.getEnteredNumbers(), player1.getCounterNumber());
         showResult(player2.getName(), player2.getEnteredNumbers(), player2.getCounterNumber());
