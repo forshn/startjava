@@ -7,8 +7,6 @@ public class Calculator {
         this.mathEx = mathEx.split(" ", 3);
     }
 
-    int result;
-
     public int calculate() {
         int firstNumber = Integer.parseInt(mathEx[0]);
         String sign = mathEx[1];
@@ -16,27 +14,20 @@ public class Calculator {
 
         switch (sign) {
             case "+":
-                result = firstNumber + secondNumber;
-                break;
+                return firstNumber + secondNumber;
             case "-":
-                result = firstNumber - secondNumber;
-                break;
+                return firstNumber - secondNumber;
             case "*":
-                result = firstNumber * secondNumber;
-                break;
+                return firstNumber * secondNumber;
             case "/":
-                result = firstNumber / secondNumber;
-                break;
+                return firstNumber / secondNumber;
             case "%":
-                result = firstNumber % secondNumber;
-                break;
+                return firstNumber % secondNumber;
             case "^":
-                result = (int) Math.pow(firstNumber, secondNumber);
-                break;
+                return (int) Math.pow(firstNumber, secondNumber);
             default:
                 System.out.println("Неверно указан тип операции");
-                break;
         }
-        return result;
+        return 0;
     }
 }

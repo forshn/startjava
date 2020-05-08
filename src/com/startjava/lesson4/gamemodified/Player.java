@@ -6,8 +6,8 @@ public class Player {
 
     private String name;
     private int number;
-    private int[] numbersPlayer = new int[10];
-    private int playerCounter = 0;
+    private int[] enteredNumbers = new int[10];
+    private int attempt = 0;
 
     public Player(String name) {
         this.name = name;
@@ -18,17 +18,17 @@ public class Player {
     }
 
     public void setCounter(int counter) {
-        this.playerCounter = counter;
+        this.attempt = counter;
     }
 
     public int getCounterNumber() {
-        return playerCounter;
+        return attempt;
     }
 
     public void setNumber(int number) {
         this.number = number;
-        numbersPlayer[playerCounter] = number;
-        playerCounter++;
+        enteredNumbers[attempt] = number;
+        attempt++;
     }
 
     public int getNumber() {
@@ -36,10 +36,10 @@ public class Player {
     }
 
     public void showResult() {
-        System.out.println("Числа, которые вводил " + name + " :" + "\n" + Arrays.toString(Arrays.copyOf(numbersPlayer, playerCounter)));
+        System.out.println("Числа, которые вводил " + name + " :" + "\n" + Arrays.toString(Arrays.copyOf(enteredNumbers, attempt)));
     }
 
-    public void toZero() {
-        Arrays.fill(numbersPlayer, 0, playerCounter, 0);
+    public void clearArray() {
+        Arrays.fill(enteredNumbers, 0, attempt, -1);
     }
 }
