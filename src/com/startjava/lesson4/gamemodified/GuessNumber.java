@@ -46,8 +46,8 @@ public class GuessNumber {
         isTrue = true;
     }
 
-    private int randomizeCompNumber(int max) {
-        return (int) (Math.random() * max + 1);
+    private int randomizeCompNumber(int maxSizeOfNumber) {
+        return (int) (Math.random() * maxSizeOfNumber + 1);
     }
 
     private int enterNumber(String name) {
