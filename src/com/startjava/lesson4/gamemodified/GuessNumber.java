@@ -20,7 +20,6 @@ public class GuessNumber {
         System.out.println("У вас 10 попыток");
 
         while (isTrue) {
-            System.out.println(compNum);
             if (player1.getCounterNumber() < 10 && isTrue) {
                 player1.setNumber(enterNumber(player1.getName()));
                 System.out.println(compareNumbers(player1.getNumber(), compNum, player1.getName(), player1.getCounterNumber()));
