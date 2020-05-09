@@ -17,12 +17,12 @@ public class Player {
     }
 
     public void setNumber(int number) {
-        this.enteredNumbers[attempt] = number;
+        enteredNumbers[attempt] = number;
         attempt++;
     }
 
     public int getNumber() {
-        return enteredNumbers[attempt-1];
+        return enteredNumbers[attempt - 1];
     }
 
     public int[] getEnteredNumbers() {

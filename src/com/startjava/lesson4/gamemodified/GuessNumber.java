@@ -18,7 +18,7 @@ public class GuessNumber {
 
     public void startGame() {
         System.out.println("У вас 10 попыток");
-        compNum = setCompNumber();
+        compNum = generateRandomNumber();
 
         while (isAnswerYes) {
             if (player1.getCounterNumber() < 10 && isAnswerYes) {
@@ -37,8 +37,8 @@ public class GuessNumber {
                 break;
             }
         }
-        showResult(player1.getName(), player1.getEnteredNumbers(), player1.getCounterNumber());
-        showResult(player2.getName(), player2.getEnteredNumbers(), player2.getCounterNumber());
+        showResult(player1);
+        showResult(player2);
         player1.setCounter(0);
         player2.setCounter(0);
         player1.clearEnteredNumbers();
@@ -46,7 +46,7 @@ public class GuessNumber {
         isAnswerYes = true;
     }
 
-    private int setCompNumber() {
+    private int generateRandomNumber() {
         return (int) (Math.random() * maxSizeOfNumber + 1);
     }
 
@@ -68,8 +68,8 @@ public class GuessNumber {
         }
     }
 
-    private void showResult(String name, int[] enteredNumbers, int counterNumber) {
-        System.out.println("Числа, которые вводил " + name + " :" + "\n" + Arrays.toString(Arrays.copyOf(enteredNumbers, counterNumber)));
+    private void showResult(Player player) {
+        System.out.println("Числа, которые вводил " + player.getName() + " :" + "\n" + Arrays.toString(Arrays.copyOf(player.getEnteredNumbers(), player.getCounterNumber())));
     }
 }
 
