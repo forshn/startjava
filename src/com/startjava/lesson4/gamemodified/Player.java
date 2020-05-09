@@ -29,11 +29,11 @@ public class Player {
         return enteredNumbers;
     }
 
-    public void setCounter(int counter) {
-        this.attempt = counter;
+    public void addAttempt(int attemptCounter) {
+        this.attempt = attemptCounter;
     }
 
-    public int getCounterNumber() {
+    public int getAttemptsNumber() {
         return attempt;
     }
 

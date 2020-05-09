@@ -21,7 +21,7 @@ public class GuessNumber {
         compNum = generateRandomNumber();
 
         while (isAnswerYes) {
-            if (player1.getCounterNumber() < 10 && isAnswerYes) {
+            if (player1.getAttemptsNumber() < 10 && isAnswerYes) {
                 player1.setNumber(enterNumber(player1.getName()));
                 compareNumbers(player1, compNum);
             } else {
@@ -29,7 +29,7 @@ public class GuessNumber {
                 break;
             }
 
-            if (player2.getCounterNumber() < 10 && isAnswerYes) {
+            if (player2.getAttemptsNumber() < 10 && isAnswerYes) {
                 player2.setNumber(enterNumber(player2.getName()));
                 compareNumbers(player2, compNum);
             } else {
@@ -39,8 +39,8 @@ public class GuessNumber {
         }
         showResult(player1);
         showResult(player2);
-        player1.setCounter(0);
-        player2.setCounter(0);
+        player1.addAttempt(0);
+        player2.addAttempt(0);
         player1.clearEnteredNumbers();
         player2.clearEnteredNumbers();
         isAnswerYes = true;
@@ -63,13 +63,13 @@ public class GuessNumber {
             System.out.println("Введенное вами число больше того, что загадал компьютер");
             return true;
         } else {
-            System.out.println(player.getName().toUpperCase() + ", Вы угадали!" + "\n" + "Игрок " + player.getName().toUpperCase() + " угадал число " + compNumber + " с " + player.getCounterNumber() + " Попытки");
+            System.out.println(player.getName().toUpperCase() + ", Вы угадали!" + "\n" + "Игрок " + player.getName().toUpperCase() + " угадал число " + compNumber + " с " + player.getAttemptsNumber() + " Попытки");
             return isAnswerYes = false;
         }
     }
 
     private void showResult(Player player) {
-        System.out.println("Числа, которые вводил " + player.getName() + " :" + "\n" + Arrays.toString(Arrays.copyOf(player.getEnteredNumbers(), player.getCounterNumber())));
+        System.out.println("Числа, которые вводил " + player.getName() + " :" + "\n" + Arrays.toString(Arrays.copyOf(player.getEnteredNumbers(), player.getAttemptsNumber())));
     }
 }
 
