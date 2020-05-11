@@ -3,7 +3,6 @@ package com.startjava.lesson4.gamemodified;
 import java.util.Arrays;
 
 public class Player {
-
     private String name;
     private int[] enteredNumbers = new int[10];
     private int attempt = 0;
