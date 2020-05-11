@@ -9,7 +9,6 @@ public class GuessNumber {
     private Scanner sc = new Scanner(System.in);
     private Player player1;
     private Player player2;
-    private boolean isAnswerYes = true;
 
     public GuessNumber(Player player1, Player player2) {
         this.player1 = player1;
@@ -20,39 +19,41 @@ public class GuessNumber {
         System.out.println("У вас 10 попыток");
         compNum = generateRandomNumber();
 
-        while (isAnswerYes) {
-            if (player1.getAttemptsNumber() < 10 && isAnswerYes) {
-                player1.setNumber(enterNumber(player1.getName()));
+        do {
+            if (player1.getAttemptsNumber() < 10) {
+                enterNumber(player1);
                 compareNumbers(player1, compNum);
             } else {
                 System.out.println("У " + player1.getName() + " закончились попытки");
                 break;
             }
 
-            if (player2.getAttemptsNumber() < 10 && isAnswerYes) {
-                player2.setNumber(enterNumber(player2.getName()));
-                compareNumbers(player2, compNum);
-            } else {
-                System.out.println("У " + player2.getName() + " закончились попытки");
-                break;
+            if (player1.getNumber() != compNum) {
+                if (player2.getAttemptsNumber() < 10) {
+                    enterNumber(player2);
+                    compareNumbers(player2, compNum);
+                } else {
+                    System.out.println("У " + player2.getName() + " закончились попытки");
+                    break;
+                }
             }
-        }
+        } while (player2.getNumber() != compNum & player1.getNumber() != compNum);
+
         showResult(player1);
         showResult(player2);
         player1.addAttempt(0);
         player2.addAttempt(0);
         player1.clearEnteredNumbers();
         player2.clearEnteredNumbers();
-        isAnswerYes = true;
     }
 
     private int generateRandomNumber() {
         return (int) (Math.random() * maxSizeOfNumber + 1);
     }
 
-    private int enterNumber(String name) {
-        System.out.println(name + ", введите ваше число от 0 до 100:");
-        return sc.nextInt();
+    private void enterNumber(Player player) {
+        System.out.println(player.getName() + ", введите ваше число от 0 до 100:");
+        player.setNumber(sc.nextInt());
     }
 
     private boolean compareNumbers(Player player, int compNumber) {
@@ -64,7 +65,7 @@ public class GuessNumber {
             return true;
         } else {
             System.out.println(player.getName().toUpperCase() + ", Вы угадали!" + "\n" + "Игрок " + player.getName().toUpperCase() + " угадал число " + compNumber + " с " + player.getAttemptsNumber() + " Попытки");
-            return isAnswerYes = false;
+            return false;
         }
     }
 
