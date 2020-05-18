@@ -10,4 +10,4 @@ CREATE TABLE jaegers (
 	origin    TEXT,
 	launch    CHAR(1),
 	kaijuKill INTEGER
-	);
+);
